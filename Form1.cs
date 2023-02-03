@@ -28,11 +28,11 @@ namespace TELEMETRIAOBSIDIAN
                 
                 if(this.WindowState == FormWindowState.Maximized)
                 {
-                    maximizeBtn.Image = Properties.Resources.minimize;
+                    maximizeBtn.Image = Properties.Resources.minimize_window;
                 }
                 else if(this.WindowState == FormWindowState.Normal)
                 {
-                    maximizeBtn.Image = Properties.Resources.maximize;
+                    maximizeBtn.Image = Properties.Resources.newer_maximize;
                 }
 
             }
@@ -62,15 +62,15 @@ namespace TELEMETRIAOBSIDIAN
         //------------------------ Conf Boton de cerrado -------------------------------
         private void closeBtn_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
         private void closeBtn_MouseEnter(object sender, EventArgs e)
         {
-            closeBtn.BackColor = Color.White;
+            closeBtn.BackColor = Color.FromArgb(255, 144, 144, 144);
         }
         private void closeBtn_MouseLeave(object sender, EventArgs e)
         {
-            closeBtn.BackColor = Color.Gray;
+            closeBtn.BackColor = Color.FromArgb(255, 81, 81, 84);
         }
         #endregion
 
@@ -81,23 +81,23 @@ namespace TELEMETRIAOBSIDIAN
             if(this.WindowState == FormWindowState.Normal)
             {
                 this.WindowState = FormWindowState.Maximized;
-                maximizeBtn.Image = Properties.Resources.minimize;
+                maximizeBtn.Image = Properties.Resources.minimize_window;
             }
             else if (this.WindowState == FormWindowState.Maximized)
             {
                 this.WindowState = FormWindowState.Normal;
-                maximizeBtn.Image = Properties.Resources.maximize;
+                maximizeBtn.Image = Properties.Resources.newer_maximize;
             }
 
         }
         private void maximizeBtn_MouseEnter(object sender, EventArgs e)
         {
-            maximizeBtn.BackColor = Color.White;
+            maximizeBtn.BackColor = Color.FromArgb(255, 144, 144, 144);
         }
 
         private void maximizeBtn_MouseLeave(object sender, EventArgs e)
         {
-            maximizeBtn.BackColor = Color.Gray;
+            maximizeBtn.BackColor = Color.FromArgb(255, 81, 81, 84);
         }
         #endregion
 
@@ -117,12 +117,12 @@ namespace TELEMETRIAOBSIDIAN
         }
         private void minimizeBtn_MouseEnter(object sender, EventArgs e)
         {
-            minimizeBtn.BackColor = Color.White;
+            minimizeBtn.BackColor = Color.FromArgb(255, 144, 144, 144);
         }
 
         private void minimizeBtn_MouseLeave(object sender, EventArgs e)
         {
-            minimizeBtn.BackColor = Color.Gray;
+            minimizeBtn.BackColor = Color.FromArgb(255, 81, 81, 84);
         }
 
         #endregion

@@ -10,3 +10,18 @@ D:\OneDrive\Documentos\PAEGUA\GUI\GUI Telemetria PAEGUA\HMI\TELEMETRIAOBSIDIAN\o
 D:\OneDrive\Documentos\PAEGUA\GUI\GUI Telemetria PAEGUA\HMI\TELEMETRIAOBSIDIAN\obj\Debug\TELEMETRIAOBSIDIAN.csproj.CopyComplete
 D:\OneDrive\Documentos\PAEGUA\GUI\GUI Telemetria PAEGUA\HMI\TELEMETRIAOBSIDIAN\obj\Debug\TELEMETRIAOBSIDIAN.exe
 D:\OneDrive\Documentos\PAEGUA\GUI\GUI Telemetria PAEGUA\HMI\TELEMETRIAOBSIDIAN\obj\Debug\TELEMETRIAOBSIDIAN.pdb
+C:\Users\pj_xe\Documents\GitHub\HMI-Obsidian\bin\Debug\TELEMETRIAOBSIDIAN.exe.config
+C:\Users\pj_xe\Documents\GitHub\HMI-Obsidian\bin\Debug\TELEMETRIAOBSIDIAN.exe
+C:\Users\pj_xe\Documents\GitHub\HMI-Obsidian\bin\Debug\TELEMETRIAOBSIDIAN.pdb
+C:\Users\pj_xe\Documents\GitHub\HMI-Obsidian\bin\Debug\Guna.UI2.dll
+C:\Users\pj_xe\Documents\GitHub\HMI-Obsidian\obj\Debug\TELEMETRIAOBSIDIAN.csproj.AssemblyReference.cache
+C:\Users\pj_xe\Documents\GitHub\HMI-Obsidian\obj\Debug\TELEMETRIAOBSIDIAN.Form1.resources
+C:\Users\pj_xe\Documents\GitHub\HMI-Obsidian\obj\Debug\TELEMETRIAOBSIDIAN.Properties.Resources.resources
+C:\Users\pj_xe\Documents\GitHub\HMI-Obsidian\obj\Debug\TELEMETRIAOBSIDIAN.csproj.GenerateResource.cache
+C:\Users\pj_xe\Documents\GitHub\HMI-Obsidian\obj\Debug\TELEMETRIAOBSIDIAN.csproj.CoreCompileInputs.cache
+C:\Users\pj_xe\Documents\GitHub\HMI-Obsidian\obj\Debug\TELEMETRIAOBSIDIAN.csproj.CopyComplete
+C:\Users\pj_xe\Documents\GitHub\HMI-Obsidian\obj\Debug\TELEMETRIAOBSIDIAN.exe
+C:\Users\pj_xe\Documents\GitHub\HMI-Obsidian\obj\Debug\TELEMETRIAOBSIDIAN.pdb
+C:\Users\pj_xe\Documents\GitHub\HMI-Obsidian\bin\Debug\CircularProgressBar.dll
+C:\Users\pj_xe\Documents\GitHub\HMI-Obsidian\bin\Debug\WinFormAnimation.dll
+C:\Users\pj_xe\Documents\GitHub\HMI-Obsidian\bin\Debug\CircularProgressBar.xml
