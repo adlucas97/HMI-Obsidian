@@ -25,3 +25,18 @@ C:\Users\pj_xe\Documents\GitHub\HMI-Obsidian\obj\Debug\TELEMETRIAOBSIDIAN.pdb
 C:\Users\pj_xe\Documents\GitHub\HMI-Obsidian\bin\Debug\CircularProgressBar.dll
 C:\Users\pj_xe\Documents\GitHub\HMI-Obsidian\bin\Debug\WinFormAnimation.dll
 C:\Users\pj_xe\Documents\GitHub\HMI-Obsidian\bin\Debug\CircularProgressBar.xml
+D:\OneDrive\Documentos\PAEGUA\GUI\GUI Telemetria PAEGUA\Share HMI\HMI-Obsidian\bin\Debug\TELEMETRIAOBSIDIAN.exe.config
+D:\OneDrive\Documentos\PAEGUA\GUI\GUI Telemetria PAEGUA\Share HMI\HMI-Obsidian\bin\Debug\TELEMETRIAOBSIDIAN.exe
+D:\OneDrive\Documentos\PAEGUA\GUI\GUI Telemetria PAEGUA\Share HMI\HMI-Obsidian\bin\Debug\TELEMETRIAOBSIDIAN.pdb
+D:\OneDrive\Documentos\PAEGUA\GUI\GUI Telemetria PAEGUA\Share HMI\HMI-Obsidian\bin\Debug\CircularProgressBar.dll
+D:\OneDrive\Documentos\PAEGUA\GUI\GUI Telemetria PAEGUA\Share HMI\HMI-Obsidian\bin\Debug\Guna.UI2.dll
+D:\OneDrive\Documentos\PAEGUA\GUI\GUI Telemetria PAEGUA\Share HMI\HMI-Obsidian\bin\Debug\WinFormAnimation.dll
+D:\OneDrive\Documentos\PAEGUA\GUI\GUI Telemetria PAEGUA\Share HMI\HMI-Obsidian\bin\Debug\CircularProgressBar.xml
+D:\OneDrive\Documentos\PAEGUA\GUI\GUI Telemetria PAEGUA\Share HMI\HMI-Obsidian\obj\Debug\TELEMETRIAOBSIDIAN.csproj.AssemblyReference.cache
+D:\OneDrive\Documentos\PAEGUA\GUI\GUI Telemetria PAEGUA\Share HMI\HMI-Obsidian\obj\Debug\TELEMETRIAOBSIDIAN.Form1.resources
+D:\OneDrive\Documentos\PAEGUA\GUI\GUI Telemetria PAEGUA\Share HMI\HMI-Obsidian\obj\Debug\TELEMETRIAOBSIDIAN.Properties.Resources.resources
+D:\OneDrive\Documentos\PAEGUA\GUI\GUI Telemetria PAEGUA\Share HMI\HMI-Obsidian\obj\Debug\TELEMETRIAOBSIDIAN.csproj.GenerateResource.cache
+D:\OneDrive\Documentos\PAEGUA\GUI\GUI Telemetria PAEGUA\Share HMI\HMI-Obsidian\obj\Debug\TELEMETRIAOBSIDIAN.csproj.CoreCompileInputs.cache
+D:\OneDrive\Documentos\PAEGUA\GUI\GUI Telemetria PAEGUA\Share HMI\HMI-Obsidian\obj\Debug\TELEMETRIAOBSIDIAN.csproj.CopyComplete
+D:\OneDrive\Documentos\PAEGUA\GUI\GUI Telemetria PAEGUA\Share HMI\HMI-Obsidian\obj\Debug\TELEMETRIAOBSIDIAN.exe
+D:\OneDrive\Documentos\PAEGUA\GUI\GUI Telemetria PAEGUA\Share HMI\HMI-Obsidian\obj\Debug\TELEMETRIAOBSIDIAN.pdb
