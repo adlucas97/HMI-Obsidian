@@ -5,6 +5,7 @@ using System.IO;
 using System.IO.Ports;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using System.Linq;
 
 namespace TELEMETRIAOBSIDIAN
 {
@@ -27,16 +28,16 @@ namespace TELEMETRIAOBSIDIAN
         {
             try
             {
-                string[] portList = SerialPort.GetPortNames();
-                comboBoxPort.Items.AddRange(portList);
-                String[] baudRates = { "9600","38400","57600", "115200"};
-                comboBoxBaud.DataSource = baudRates;
-                
-                if(this.WindowState == FormWindowState.Maximized)
+                //string[] portList = SerialPort.GetPortNames();
+                //comboBoxPort.Items.AddRange(portList);
+                //String[] baudRates = { "9600", "38400", "57600", "115200" };
+                //comboBoxBaud.DataSource = baudRates;
+
+                if (this.WindowState == FormWindowState.Maximized)
                 {
                     maximizeBtn.Image = Properties.Resources.minimize_window;
                 }
-                else if(this.WindowState == FormWindowState.Normal)
+                else if (this.WindowState == FormWindowState.Normal)
                 {
                     maximizeBtn.Image = Properties.Resources.newer_maximize;
                 }
@@ -73,7 +74,7 @@ namespace TELEMETRIAOBSIDIAN
                 serialPort1.WriteLine("$Stop");
                 serialPort1.Close();
             }
-                
+
 
             this.Close();
         }
@@ -91,7 +92,7 @@ namespace TELEMETRIAOBSIDIAN
         //------------------- Conf Botón de maximizar -------------------------------------
         private void maximizeBtn_Click(object sender, EventArgs e)
         {
-            if(this.WindowState == FormWindowState.Normal)
+            if (this.WindowState == FormWindowState.Normal)
             {
                 this.WindowState = FormWindowState.Maximized;
                 maximizeBtn.Image = Properties.Resources.minimize_window;
@@ -122,11 +123,11 @@ namespace TELEMETRIAOBSIDIAN
             {
                 this.WindowState = FormWindowState.Minimized;
             }
-            catch(Exception error)
+            catch (Exception error)
             {
                 MessageBox.Show(error.Message);
             }
-           
+
         }
         private void minimizeBtn_MouseEnter(object sender, EventArgs e)
         {
@@ -140,183 +141,227 @@ namespace TELEMETRIAOBSIDIAN
 
         #endregion
 
-        #region Boton de Conexion Serial
+        //#region Boton de Conexion Serial
 
-        //-------------------------------Conf Botón de conexión -------------------------------------
-        private void buttonOpen_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (serialPort1.IsOpen)
-                {
-                    serialPort1.WriteLine("$Stop");
-                    serialPort1.Close();
-                    comboBoxBaud.Enabled = true;
-                    comboBoxPort.Enabled = true;
-                    buttonRefresh.Enabled = true;
-                    buttonOpen.Text = "Iniciar Comunicación";
+        ////-------------------------------Conf Botón de conexión -------------------------------------
+        //private void buttonOpen_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        if (serialPort1.IsOpen)
+        //        {
+        //            serialPort1.WriteLine("$Stop");
+        //            serialPort1.Close();
+        //            comboBoxBaud.Enabled = true;
+        //            comboBoxPort.Enabled = true;
+        //            buttonRefresh.Enabled = true;
+        //            buttonOpen.Text = "Iniciar Comunicación";
 
-                }
-                else
-                {
-                    serialPort1.PortName = comboBoxPort.Text;
-                    serialPort1.BaudRate = Convert.ToInt32(comboBoxBaud.Text);
-                    serialPort1.Open();
+        //        }
+        //        else
+        //        {
+        //            serialPort1.PortName = comboBoxPort.Text;
+        //            serialPort1.BaudRate = Convert.ToInt32(comboBoxBaud.Text);
+        //            serialPort1.Open();
 
-                    comboBoxBaud.Enabled = false;
-                    comboBoxPort.Enabled = false;
-                    buttonRefresh.Enabled = false;
+        //            comboBoxBaud.Enabled = false;
+        //            comboBoxPort.Enabled = false;
+        //            buttonRefresh.Enabled = false;
 
-                    buttonOpen.Text = "Detener Comunicación";
+        //            buttonOpen.Text = "Detener Comunicación";
 
-                    serialPort1.WriteLine("$Start");
-                }
-                
+        //            serialPort1.WriteLine("$Start");
+        //        }
 
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show(error.Message);
-            }
-        }
-        #endregion
 
-        #region Boton de refrescar
-        //------------------------------- Conf Botón de Refrescar ----------------------------------
-        private void buttonRefresh_Click(object sender, EventArgs e)
-        {
-            string[] portList = SerialPort.GetPortNames();
-            comboBoxPort.DataSource = portList;
-        }
-        #endregion
+        //    }
+        //    catch (Exception error)
+        //    {
+        //        MessageBox.Show(error.Message);
+        //    }
+        //}
+        //#endregion
+
+        //#region Boton de refrescar
+        ////------------------------------- Conf Botón de Refrescar ----------------------------------
+        //private void buttonRefresh_Click(object sender, EventArgs e)
+        //{
+        //    string[] portList = SerialPort.GetPortNames();
+        //    comboBoxPort.DataSource = portList;
+        //}
+        //#endregion
 
         #region Comunicacion Serial y Lectura de datos
         //--------------------------------Conf de lectura serial y acciones --------------------------       
-        private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        //private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        //{
+        //    while (serialPort1.IsOpen && serialPort1.BytesToRead > 0)
+        //    {
+        //        try
+        //        {
+        //            string serialData = serialPort1.ReadLine();
+        //            string[] measures = serialData.Split(',');
+        //            List<string> receivedKeys = new List<string>();
+        //            Console.WriteLine(serialData);
+        //            foreach (string measure in measures)
+        //            {
+        //                // Verificar el formato correcto
+        //                string[] parts = measure.Split('=');
+        //                if (parts.Length != 2)
+        //                {
+        //                    Console.WriteLine("Error en el formato: " + measure);
+
+        //                    return;
+        //                }
+
+        //                // Verificar que el identificador esté en la lista de identificadores predefinidos
+        //                string key = parts[0];
+        //                if (!keys.Contains(key))
+        //                {
+        //                    Console.WriteLine("Identificador desconocido: " + key);
+        //                    return;
+        //                }
+        //                else
+        //                {
+        //                    // Guardar el valor en el diccionario
+        //                    receivedKeys.Add(key);
+        //                    string pattern = @"\r\n|\r|\n";
+        //                    string value = parts[1];
+        //                    value = Regex.Replace(value, pattern, "");
+        //                    data[key] = value;
+        //                    Console.WriteLine("Key: " + key + " value: " + value);
+
+        //                }
+        //            }
+
+        //            CheckForIllegalCrossThreadCalls = false;
+        //            foreach (var key in receivedKeys)
+        //            {
+        //                switch (key)
+        //                {
+        //                    case "t":
+        //                        break;
+        //                    case "T":
+        //                        labelTemp.Text = data[key];
+        //                        chartTemp.Invoke((MethodInvoker)(() => chartTemp.Series["Temperatura"].Points.AddY(Convert.ToInt32(data[key]))));
+        //                        break;
+        //                    case "A":
+        //                        labelAlt.Text = data[key];
+        //                        chartAltitud.Invoke((MethodInvoker)(() => chartAltitud.Series["Altitud"].Points.AddY(Convert.ToInt32(data[key]))));
+        //                        break;
+        //                    case "P":
+        //                        string valor = data[key];
+        //                        if (valor == "1")
+        //                        {
+        //                            parachutePictureBox.Image = Properties.Resources._256px_open_parachute;
+        //                            parachuteStateLabel.Text = "DESPLEGADO";
+
+        //                        }
+        //                        Console.WriteLine("P: " + data[key]);
+        //                        break;
+        //                    case "ax":
+        //                        Console.WriteLine("ax: " + data[key]);
+        //                        break;
+        //                    case "ay":
+        //                        Console.WriteLine("ay: " + data[key]);
+        //                        break;
+        //                    case "az":
+        //                        Console.WriteLine("az: " + data[key]);
+        //                        break;
+        //                    case "acx":
+        //                        Console.WriteLine("acx: " + data[key]);
+        //                        break;
+        //                    case "acy":
+        //                        Console.WriteLine("acy: " + data[key]);
+        //                        break;
+        //                    case "acz":
+        //                        Console.WriteLine("acz: " + data[key]);
+        //                        break;
+        //                    case "Pa":
+        //                        break;
+        //                }
+        //            }
+        //            // Verificar si existe el archivo mediciones.txt
+        //            string fileName = "mediciones.txt";
+        //            if (!File.Exists(fileName))
+        //            {
+        //                // Crear el archivo si no existe
+        //                using (StreamWriter writer = File.CreateText(fileName))
+        //                {
+        //                    // Escribir los datos en el archivo
+        //                    foreach (KeyValuePair<string, string> entry in data)
+        //                    {
+        //                        writer.WriteLine(entry.Key + "=" + entry.Value);
+        //                    }
+        //                }
+        //            }
+        //            else
+        //            {
+        //                // Agregar los datos al archivo si ya existe
+        //                using (StreamWriter writer = File.AppendText(fileName))
+        //                {
+        //                    // Escribir los datos en el archivo
+        //                    foreach (KeyValuePair<string, string> entry in data)
+        //                    {
+        //                        writer.WriteLine(entry.Key + "=" + entry.Value);
+        //                    }
+        //                }
+        //            }
+        //        }
+        //        catch (Exception error)
+        //        {
+        //            Console.WriteLine(error.Message);
+        //        }
+
+
+        //    }
+        //}
+
+        #endregion
+
+        #region Funcionalidades Formulario
+        private void AbrirFormulario<MiForm>() where MiForm : Form, new()
         {
-            while(serialPort1.IsOpen && serialPort1.BytesToRead > 0)
+            Form formulario;
+            formulario = panelbase.Controls.OfType<MiForm>().FirstOrDefault();
+            if (formulario == null)
             {
-                try
-                {
-                    string serialData = serialPort1.ReadLine();
-                    string[] measures = serialData.Split(',');
-                    List<string> receivedKeys = new List<string>();
-                    Console.WriteLine(serialData);
-                    foreach (string measure in measures)
-                    {
-                        // Verificar el formato correcto
-                        string[] parts = measure.Split('=');
-                        if (parts.Length != 2)
-                        {
-                            Console.WriteLine("Error en el formato: " + measure);
-
-                            return;
-                        }
-
-                        // Verificar que el identificador esté en la lista de identificadores predefinidos
-                        string key = parts[0];
-                        if (!keys.Contains(key))
-                        {
-                            Console.WriteLine("Identificador desconocido: " + key);
-                            return;
-                        }
-                        else
-                        {
-                            // Guardar el valor en el diccionario
-                            receivedKeys.Add(key);
-                            string pattern = @"\r\n|\r|\n";
-                            string value = parts[1];
-                            value = Regex.Replace(value, pattern, "");
-                            data[key] = value;
-                            Console.WriteLine("Key: " + key + " value: " + value);
-
-                        }
-                    }
-
-                    CheckForIllegalCrossThreadCalls = false;
-                    foreach (var key in receivedKeys)
-                    {
-                        switch (key)
-                        {
-                            case "t":
-                                break;
-                            case "T":
-                                labelTemp.Text = data[key];
-                                chartTemp.Invoke((MethodInvoker)(() => chartTemp.Series["Temperatura"].Points.AddY(Convert.ToInt32(data[key]))));
-                                break;
-                            case "A":
-                                labelAlt.Text = data[key];
-                                chartAltitud.Invoke((MethodInvoker)(() => chartAltitud.Series["Altitud"].Points.AddY(Convert.ToInt32(data[key]))));
-                                break;
-                            case "P":
-                                string valor = data[key];
-                                if (valor == "1")
-                                {
-                                    parachutePictureBox.Image = Properties.Resources.parachute;
-                                    parachuteStateLabel.Text = "Desplegado";
-
-                                }
-                                Console.WriteLine("P: " + data[key]);
-                                break;
-                            case "ax":
-                                Console.WriteLine("ax: " + data[key]);
-                                break;
-                            case "ay":
-                                Console.WriteLine("ay: " + data[key]);
-                                break;
-                            case "az":
-                                Console.WriteLine("az: " + data[key]);
-                                break;
-                            case "acx":
-                                Console.WriteLine("acx: " + data[key]);
-                                break;
-                            case "acy":
-                                Console.WriteLine("acy: " + data[key]);
-                                break;
-                            case "acz":
-                                Console.WriteLine("acz: " + data[key]);
-                                break;
-                            case "Pa":
-                                break;
-                        }
-                    }
-                    // Verificar si existe el archivo mediciones.txt
-                    string fileName = "mediciones.txt";
-                    if (!File.Exists(fileName))
-                    {
-                        // Crear el archivo si no existe
-                        using (StreamWriter writer = File.CreateText(fileName))
-                        {
-                            // Escribir los datos en el archivo
-                            foreach (KeyValuePair<string, string> entry in data)
-                            {
-                                writer.WriteLine(entry.Key + "=" + entry.Value);
-                            }
-                        }
-                    }
-                    else
-                    {
-                        // Agregar los datos al archivo si ya existe
-                        using (StreamWriter writer = File.AppendText(fileName))
-                        {
-                            // Escribir los datos en el archivo
-                            foreach (KeyValuePair<string, string> entry in data)
-                            {
-                                writer.WriteLine(entry.Key + "=" + entry.Value);
-                            }
-                        }
-                    }
-                }
-                catch(Exception error)
-                {
-                    Console.WriteLine(error.Message);
-                }
-                
-
+                formulario = new MiForm();
+                formulario.TopLevel = false;
+                formulario.FormBorderStyle = FormBorderStyle.None;
+                formulario.Dock = DockStyle.Fill;
+                panelbase.Controls.Add(formulario);
+                panelbase.Tag = formulario;
+                formulario.Show();
+                formulario.BringToFront();
             }
+            else
+            {
+                formulario.BringToFront();
+            }
+
         }
 
         #endregion
 
+        private void btnSerial_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Form3>();
+        }
+
+        private void btnResumen_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Form2>();
+        }
+
+        private void btnDatos_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Form4>();
+        }
+
+        private void btnComms_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Form5>();
+        }
     }
 }
