@@ -40,3 +40,7 @@ D:\OneDrive\Documentos\PAEGUA\GUI\GUI Telemetria PAEGUA\Share HMI\HMI-Obsidian\o
 D:\OneDrive\Documentos\PAEGUA\GUI\GUI Telemetria PAEGUA\Share HMI\HMI-Obsidian\obj\Debug\TELEMETRIAOBSIDIAN.csproj.CopyComplete
 D:\OneDrive\Documentos\PAEGUA\GUI\GUI Telemetria PAEGUA\Share HMI\HMI-Obsidian\obj\Debug\TELEMETRIAOBSIDIAN.exe
 D:\OneDrive\Documentos\PAEGUA\GUI\GUI Telemetria PAEGUA\Share HMI\HMI-Obsidian\obj\Debug\TELEMETRIAOBSIDIAN.pdb
+C:\Users\pj_xe\Documents\GitHub\HMI-Obsidian\obj\Debug\TELEMETRIAOBSIDIAN.Form2.resources
+C:\Users\pj_xe\Documents\GitHub\HMI-Obsidian\obj\Debug\TELEMETRIAOBSIDIAN.Form3.resources
+C:\Users\pj_xe\Documents\GitHub\HMI-Obsidian\obj\Debug\TELEMETRIAOBSIDIAN.Form4.resources
+C:\Users\pj_xe\Documents\GitHub\HMI-Obsidian\obj\Debug\TELEMETRIAOBSIDIAN.Form5.resources
