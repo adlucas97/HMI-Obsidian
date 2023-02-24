@@ -16,5 +16,12 @@ namespace TELEMETRIAOBSIDIAN
         {
             InitializeComponent();
         }
+
+        
+
+        private void Form4_Load(object sender, EventArgs e)
+        {
+            ComForms.richTextBox1 = richTextBox1;
+        }
     }
 }

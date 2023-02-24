@@ -29,7 +29,6 @@ namespace TELEMETRIAOBSIDIAN
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -53,14 +52,15 @@ namespace TELEMETRIAOBSIDIAN
             this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartVelocity = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelAcceleration = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartAcceleration = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.parachuteStateLabel = new System.Windows.Forms.Label();
+            this.parachutePictureBox = new Guna.UI2.WinForms.Guna2PictureBox();
             this.groupBoxAlt = new Guna.UI2.WinForms.Guna2GroupBox();
             this.labelAlt = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -69,22 +69,20 @@ namespace TELEMETRIAOBSIDIAN
             this.labelTemp = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.chartTemp = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
-            this.buttonIniciar = new System.Windows.Forms.Button();
-            this.parachutePictureBox = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.buttonStartTrans = new System.Windows.Forms.Button();
             this.guna2Panel3.SuspendLayout();
             this.guna2GroupBox4.SuspendLayout();
             this.guna2CircleProgressBar1.SuspendLayout();
             this.guna2GroupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartVelocity)).BeginInit();
             this.guna2GroupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartAcceleration)).BeginInit();
             this.guna2GroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.parachutePictureBox)).BeginInit();
             this.groupBoxAlt.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartAltitud)).BeginInit();
             this.groupBoxTemp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartTemp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.parachutePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Panel3
@@ -183,7 +181,7 @@ namespace TELEMETRIAOBSIDIAN
             this.guna2GroupBox3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
             this.guna2GroupBox3.Controls.Add(this.label5);
             this.guna2GroupBox3.Controls.Add(this.label6);
-            this.guna2GroupBox3.Controls.Add(this.chart2);
+            this.guna2GroupBox3.Controls.Add(this.chartVelocity);
             this.guna2GroupBox3.CustomBorderColor = System.Drawing.Color.White;
             this.guna2GroupBox3.CustomBorderThickness = new System.Windows.Forms.Padding(0, 40, 0, 40);
             this.guna2GroupBox3.Font = new System.Drawing.Font("Yu Gothic UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -224,11 +222,11 @@ namespace TELEMETRIAOBSIDIAN
             this.label6.TabIndex = 2;
             this.label6.Text = "(m/s)";
             // 
-            // chart2
+            // chartVelocity
             // 
-            this.chart2.BorderlineColor = System.Drawing.Color.Transparent;
-            this.chart2.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            this.chart2.BorderlineWidth = 2;
+            this.chartVelocity.BorderlineColor = System.Drawing.Color.Transparent;
+            this.chartVelocity.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            this.chartVelocity.BorderlineWidth = 2;
             chartArea1.AxisX.IsLabelAutoFit = false;
             chartArea1.AxisX.LabelStyle.Font = new System.Drawing.Font("Verdana", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.Transparent;
@@ -236,32 +234,32 @@ namespace TELEMETRIAOBSIDIAN
             chartArea1.AxisY.LabelStyle.Font = new System.Drawing.Font("Verdana", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.Transparent;
             chartArea1.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea1);
+            this.chartVelocity.ChartAreas.Add(chartArea1);
             legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
             legend1.Enabled = false;
             legend1.Name = "Legend1";
-            this.chart2.Legends.Add(legend1);
-            this.chart2.Location = new System.Drawing.Point(14, 96);
-            this.chart2.Name = "chart2";
-            this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
+            this.chartVelocity.Legends.Add(legend1);
+            this.chartVelocity.Location = new System.Drawing.Point(14, 96);
+            this.chartVelocity.Name = "chartVelocity";
+            this.chartVelocity.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
             series1.BorderWidth = 2;
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(106)))), ((int)(((byte)(170)))));
             series1.Legend = "Legend1";
             series1.Name = "Velocidad";
-            this.chart2.Series.Add(series1);
-            this.chart2.Size = new System.Drawing.Size(388, 260);
-            this.chart2.TabIndex = 1;
-            this.chart2.Text = "chart2";
+            this.chartVelocity.Series.Add(series1);
+            this.chartVelocity.Size = new System.Drawing.Size(388, 260);
+            this.chartVelocity.TabIndex = 1;
+            this.chartVelocity.Text = "chart2";
             // 
             // guna2GroupBox2
             // 
             this.guna2GroupBox2.BackColor = System.Drawing.Color.Transparent;
             this.guna2GroupBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
-            this.guna2GroupBox2.Controls.Add(this.label3);
+            this.guna2GroupBox2.Controls.Add(this.labelAcceleration);
             this.guna2GroupBox2.Controls.Add(this.label4);
-            this.guna2GroupBox2.Controls.Add(this.chart1);
+            this.guna2GroupBox2.Controls.Add(this.chartAcceleration);
             this.guna2GroupBox2.CustomBorderColor = System.Drawing.Color.White;
             this.guna2GroupBox2.CustomBorderThickness = new System.Windows.Forms.Padding(0, 40, 0, 40);
             this.guna2GroupBox2.Font = new System.Drawing.Font("Yu Gothic UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -276,19 +274,19 @@ namespace TELEMETRIAOBSIDIAN
             this.guna2GroupBox2.Text = "ACELERACIÓN";
             this.guna2GroupBox2.TextOffset = new System.Drawing.Point(0, 5);
             // 
-            // label3
+            // labelAcceleration
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(15)))), ((int)(((byte)(149)))));
-            this.label3.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(16, 50);
-            this.label3.Margin = new System.Windows.Forms.Padding(0);
-            this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(5, 0, 0, 5);
-            this.label3.Size = new System.Drawing.Size(28, 33);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "0";
+            this.labelAcceleration.AutoSize = true;
+            this.labelAcceleration.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(15)))), ((int)(((byte)(149)))));
+            this.labelAcceleration.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAcceleration.ForeColor = System.Drawing.Color.White;
+            this.labelAcceleration.Location = new System.Drawing.Point(16, 50);
+            this.labelAcceleration.Margin = new System.Windows.Forms.Padding(0);
+            this.labelAcceleration.Name = "labelAcceleration";
+            this.labelAcceleration.Padding = new System.Windows.Forms.Padding(5, 0, 0, 5);
+            this.labelAcceleration.Size = new System.Drawing.Size(28, 33);
+            this.labelAcceleration.TabIndex = 3;
+            this.labelAcceleration.Text = "0";
             // 
             // label4
             // 
@@ -303,10 +301,10 @@ namespace TELEMETRIAOBSIDIAN
             this.label4.TabIndex = 2;
             this.label4.Text = "(m/s^2)";
             // 
-            // chart1
+            // chartAcceleration
             // 
-            this.chart1.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            this.chart1.BorderlineWidth = 2;
+            this.chartAcceleration.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            this.chartAcceleration.BorderlineWidth = 2;
             chartArea2.AxisX.IsLabelAutoFit = false;
             chartArea2.AxisX.LabelStyle.Font = new System.Drawing.Font("Verdana", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             chartArea2.AxisX.MajorGrid.LineColor = System.Drawing.Color.Transparent;
@@ -314,14 +312,14 @@ namespace TELEMETRIAOBSIDIAN
             chartArea2.AxisY.LabelStyle.Font = new System.Drawing.Font("Verdana", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             chartArea2.AxisY.MajorGrid.LineColor = System.Drawing.Color.Transparent;
             chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
+            this.chartAcceleration.ChartAreas.Add(chartArea2);
             legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
             legend2.Enabled = false;
             legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(14, 96);
-            this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
+            this.chartAcceleration.Legends.Add(legend2);
+            this.chartAcceleration.Location = new System.Drawing.Point(14, 96);
+            this.chartAcceleration.Name = "chartAcceleration";
+            this.chartAcceleration.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
             series2.BorderWidth = 2;
             series2.ChartArea = "ChartArea1";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
@@ -340,12 +338,12 @@ namespace TELEMETRIAOBSIDIAN
             series4.Color = System.Drawing.Color.Teal;
             series4.Legend = "Legend1";
             series4.Name = "Aceleración Y";
-            this.chart1.Series.Add(series2);
-            this.chart1.Series.Add(series3);
-            this.chart1.Series.Add(series4);
-            this.chart1.Size = new System.Drawing.Size(385, 260);
-            this.chart1.TabIndex = 1;
-            this.chart1.Text = "chart2";
+            this.chartAcceleration.Series.Add(series2);
+            this.chartAcceleration.Series.Add(series3);
+            this.chartAcceleration.Series.Add(series4);
+            this.chartAcceleration.Size = new System.Drawing.Size(385, 260);
+            this.chartAcceleration.TabIndex = 1;
+            this.chartAcceleration.Text = "chart2";
             // 
             // guna2GroupBox1
             // 
@@ -394,6 +392,18 @@ namespace TELEMETRIAOBSIDIAN
             this.parachuteStateLabel.TabIndex = 1;
             this.parachuteStateLabel.Text = "NO DESPLEGADO";
             this.parachuteStateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // parachutePictureBox
+            // 
+            this.parachutePictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.parachutePictureBox.Image = global::TELEMETRIAOBSIDIAN.Properties.Resources._256px_parachute_bag;
+            this.parachutePictureBox.ImageRotate = 0F;
+            this.parachutePictureBox.Location = new System.Drawing.Point(107, 46);
+            this.parachutePictureBox.Name = "parachutePictureBox";
+            this.parachutePictureBox.Size = new System.Drawing.Size(130, 130);
+            this.parachutePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.parachutePictureBox.TabIndex = 0;
+            this.parachutePictureBox.TabStop = false;
             // 
             // groupBoxAlt
             // 
@@ -554,30 +564,19 @@ namespace TELEMETRIAOBSIDIAN
             this.chartTemp.TabIndex = 1;
             this.chartTemp.Text = "chart2";
             // 
-            // buttonIniciar
+            // buttonStartTrans
             // 
-            this.buttonIniciar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(106)))), ((int)(((byte)(170)))));
-            this.buttonIniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonIniciar.Font = new System.Drawing.Font("Yu Gothic UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonIniciar.ForeColor = System.Drawing.Color.White;
-            this.buttonIniciar.Location = new System.Drawing.Point(776, 85);
-            this.buttonIniciar.Name = "buttonIniciar";
-            this.buttonIniciar.Size = new System.Drawing.Size(340, 51);
-            this.buttonIniciar.TabIndex = 20;
-            this.buttonIniciar.Text = "INICIAR TRANSMISIÓN";
-            this.buttonIniciar.UseVisualStyleBackColor = false;
-            // 
-            // parachutePictureBox
-            // 
-            this.parachutePictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.parachutePictureBox.Image = global::TELEMETRIAOBSIDIAN.Properties.Resources._256px_parachute_bag;
-            this.parachutePictureBox.ImageRotate = 0F;
-            this.parachutePictureBox.Location = new System.Drawing.Point(107, 46);
-            this.parachutePictureBox.Name = "parachutePictureBox";
-            this.parachutePictureBox.Size = new System.Drawing.Size(130, 130);
-            this.parachutePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.parachutePictureBox.TabIndex = 0;
-            this.parachutePictureBox.TabStop = false;
+            this.buttonStartTrans.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(15)))), ((int)(((byte)(149)))));
+            this.buttonStartTrans.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonStartTrans.Font = new System.Drawing.Font("Yu Gothic UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonStartTrans.ForeColor = System.Drawing.Color.White;
+            this.buttonStartTrans.Location = new System.Drawing.Point(776, 85);
+            this.buttonStartTrans.Name = "buttonStartTrans";
+            this.buttonStartTrans.Size = new System.Drawing.Size(340, 51);
+            this.buttonStartTrans.TabIndex = 20;
+            this.buttonStartTrans.Text = "INICIAR TRANSMISIÓN";
+            this.buttonStartTrans.UseVisualStyleBackColor = false;
+            this.buttonStartTrans.Click += new System.EventHandler(this.buttonIniciar_Click);
             // 
             // Form2
             // 
@@ -585,7 +584,7 @@ namespace TELEMETRIAOBSIDIAN
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1882, 853);
-            this.Controls.Add(this.buttonIniciar);
+            this.Controls.Add(this.buttonStartTrans);
             this.Controls.Add(this.guna2GroupBox4);
             this.Controls.Add(this.guna2GroupBox3);
             this.Controls.Add(this.guna2GroupBox2);
@@ -595,6 +594,7 @@ namespace TELEMETRIAOBSIDIAN
             this.Controls.Add(this.guna2Panel3);
             this.Name = "Form2";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
             this.guna2GroupBox4.ResumeLayout(false);
@@ -602,19 +602,19 @@ namespace TELEMETRIAOBSIDIAN
             this.guna2CircleProgressBar1.PerformLayout();
             this.guna2GroupBox3.ResumeLayout(false);
             this.guna2GroupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartVelocity)).EndInit();
             this.guna2GroupBox2.ResumeLayout(false);
             this.guna2GroupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartAcceleration)).EndInit();
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.parachutePictureBox)).EndInit();
             this.groupBoxAlt.ResumeLayout(false);
             this.groupBoxAlt.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartAltitud)).EndInit();
             this.groupBoxTemp.ResumeLayout(false);
             this.groupBoxTemp.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartTemp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.parachutePictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -630,11 +630,11 @@ namespace TELEMETRIAOBSIDIAN
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartVelocity;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelAcceleration;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartAcceleration;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label parachuteStateLabel;
@@ -647,7 +647,6 @@ namespace TELEMETRIAOBSIDIAN
         private System.Windows.Forms.Label labelTemp;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartTemp;
-        private System.IO.Ports.SerialPort serialPort1;
-        private System.Windows.Forms.Button buttonIniciar;
+        private System.Windows.Forms.Button buttonStartTrans;
     }
 }

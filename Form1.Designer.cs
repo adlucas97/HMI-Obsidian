@@ -33,36 +33,35 @@ namespace TELEMETRIAOBSIDIAN
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.topPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.dragPanel = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.panelbase = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.btnComms = new System.Windows.Forms.Button();
-            this.btnResumen = new System.Windows.Forms.Button();
-            this.btnDatos = new System.Windows.Forms.Button();
-            this.btnSerial = new System.Windows.Forms.Button();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.minimizeBtn = new Guna.UI2.WinForms.Guna2PictureBox();
             this.maximizeBtn = new Guna.UI2.WinForms.Guna2PictureBox();
             this.closeBtn = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBoxRocketComState = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBoxBaseComState = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnComms = new System.Windows.Forms.Button();
+            this.btnResumen = new System.Windows.Forms.Button();
+            this.btnDatos = new System.Windows.Forms.Button();
+            this.btnSerial = new System.Windows.Forms.Button();
+            this.panelbase = new System.Windows.Forms.Panel();
+            this.pictureBoxFondoCohete = new Guna.UI2.WinForms.Guna2PictureBox();
             this.dragPanel.SuspendLayout();
-            this.guna2Panel2.SuspendLayout();
-            this.panelbase.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimizeBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximizeBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeBtn)).BeginInit();
+            this.guna2Panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRocketComState)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBaseComState)).BeginInit();
+            this.panelbase.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFondoCohete)).BeginInit();
             this.SuspendLayout();
             // 
             // topPanel
@@ -87,6 +86,67 @@ namespace TELEMETRIAOBSIDIAN
             this.dragPanel.Size = new System.Drawing.Size(1432, 36);
             this.dragPanel.TabIndex = 1;
             // 
+            // guna2PictureBox2
+            // 
+            this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox2.Image = global::TELEMETRIAOBSIDIAN.Properties.Resources.Group_109;
+            this.guna2PictureBox2.ImageRotate = 0F;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.Size = new System.Drawing.Size(165, 33);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox2.TabIndex = 1;
+            this.guna2PictureBox2.TabStop = false;
+            this.guna2PictureBox2.UseTransparentBackground = true;
+            // 
+            // minimizeBtn
+            // 
+            this.minimizeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.minimizeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.minimizeBtn.Image = global::TELEMETRIAOBSIDIAN.Properties.Resources.new_minimize;
+            this.minimizeBtn.ImageRotate = 0F;
+            this.minimizeBtn.Location = new System.Drawing.Point(1220, 0);
+            this.minimizeBtn.Name = "minimizeBtn";
+            this.minimizeBtn.Size = new System.Drawing.Size(72, 36);
+            this.minimizeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.minimizeBtn.TabIndex = 3;
+            this.minimizeBtn.TabStop = false;
+            this.minimizeBtn.Click += new System.EventHandler(this.minimizeBtn_Click);
+            this.minimizeBtn.MouseEnter += new System.EventHandler(this.minimizeBtn_MouseEnter);
+            this.minimizeBtn.MouseLeave += new System.EventHandler(this.minimizeBtn_MouseLeave);
+            // 
+            // maximizeBtn
+            // 
+            this.maximizeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.maximizeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.maximizeBtn.Image = global::TELEMETRIAOBSIDIAN.Properties.Resources.minimize_window;
+            this.maximizeBtn.ImageRotate = 0F;
+            this.maximizeBtn.Location = new System.Drawing.Point(1289, 0);
+            this.maximizeBtn.Name = "maximizeBtn";
+            this.maximizeBtn.Size = new System.Drawing.Size(72, 36);
+            this.maximizeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.maximizeBtn.TabIndex = 2;
+            this.maximizeBtn.TabStop = false;
+            this.maximizeBtn.Click += new System.EventHandler(this.maximizeBtn_Click);
+            this.maximizeBtn.MouseEnter += new System.EventHandler(this.maximizeBtn_MouseEnter);
+            this.maximizeBtn.MouseLeave += new System.EventHandler(this.maximizeBtn_MouseLeave);
+            // 
+            // closeBtn
+            // 
+            this.closeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.closeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.closeBtn.Image = global::TELEMETRIAOBSIDIAN.Properties.Resources.new_close;
+            this.closeBtn.ImageRotate = 0F;
+            this.closeBtn.Location = new System.Drawing.Point(1360, 0);
+            this.closeBtn.Name = "closeBtn";
+            this.closeBtn.Size = new System.Drawing.Size(72, 36);
+            this.closeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.closeBtn.TabIndex = 1;
+            this.closeBtn.TabStop = false;
+            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
+            this.closeBtn.MouseEnter += new System.EventHandler(this.closeBtn_MouseEnter);
+            this.closeBtn.MouseLeave += new System.EventHandler(this.closeBtn_MouseLeave);
+            // 
             // guna2DragControl1
             // 
             this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
@@ -107,50 +167,18 @@ namespace TELEMETRIAOBSIDIAN
             this.guna2Panel2.Size = new System.Drawing.Size(165, 764);
             this.guna2Panel2.TabIndex = 10;
             // 
-            // panelbase
-            // 
-            this.panelbase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.panelbase.Controls.Add(this.guna2PictureBox3);
-            this.panelbase.Location = new System.Drawing.Point(165, 36);
-            this.panelbase.Name = "panelbase";
-            this.panelbase.Size = new System.Drawing.Size(1900, 770);
-            this.panelbase.TabIndex = 12;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DimGray;
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.guna2PictureBox4);
+            this.panel1.Controls.Add(this.pictureBoxRocketComState);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.guna2PictureBox1);
+            this.panel1.Controls.Add(this.pictureBoxBaseComState);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(165, 115);
             this.panel1.TabIndex = 11;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Yu Gothic UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(2, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(191, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ESTADO DE CONEXIÓN";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Yu Gothic UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(21, 80);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 23);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "BASE";
             // 
             // label3
             // 
@@ -163,39 +191,49 @@ namespace TELEMETRIAOBSIDIAN
             this.label3.TabIndex = 4;
             this.label3.Text = "COHETE";
             // 
-            // guna2PictureBox3
+            // pictureBoxRocketComState
             // 
-            this.guna2PictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2PictureBox3.Image = global::TELEMETRIAOBSIDIAN.Properties.Resources.rocket_planet_angle_1;
-            this.guna2PictureBox3.ImageRotate = 0F;
-            this.guna2PictureBox3.Location = new System.Drawing.Point(0, 0);
-            this.guna2PictureBox3.Name = "guna2PictureBox3";
-            this.guna2PictureBox3.Size = new System.Drawing.Size(1900, 770);
-            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.guna2PictureBox3.TabIndex = 0;
-            this.guna2PictureBox3.TabStop = false;
+            this.pictureBoxRocketComState.Image = global::TELEMETRIAOBSIDIAN.Properties.Resources.default_rocket;
+            this.pictureBoxRocketComState.ImageRotate = 0F;
+            this.pictureBoxRocketComState.Location = new System.Drawing.Point(101, 45);
+            this.pictureBoxRocketComState.Name = "pictureBoxRocketComState";
+            this.pictureBoxRocketComState.Size = new System.Drawing.Size(32, 32);
+            this.pictureBoxRocketComState.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBoxRocketComState.TabIndex = 3;
+            this.pictureBoxRocketComState.TabStop = false;
             // 
-            // guna2PictureBox4
+            // label2
             // 
-            this.guna2PictureBox4.Image = global::TELEMETRIAOBSIDIAN.Properties.Resources.default_rocket;
-            this.guna2PictureBox4.ImageRotate = 0F;
-            this.guna2PictureBox4.Location = new System.Drawing.Point(101, 45);
-            this.guna2PictureBox4.Name = "guna2PictureBox4";
-            this.guna2PictureBox4.Size = new System.Drawing.Size(32, 32);
-            this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.guna2PictureBox4.TabIndex = 3;
-            this.guna2PictureBox4.TabStop = false;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Yu Gothic UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(21, 80);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(49, 23);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "BASE";
             // 
-            // guna2PictureBox1
+            // pictureBoxBaseComState
             // 
-            this.guna2PictureBox1.Image = global::TELEMETRIAOBSIDIAN.Properties.Resources.default_base;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(30, 45);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(32, 32);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.guna2PictureBox1.TabIndex = 1;
-            this.guna2PictureBox1.TabStop = false;
+            this.pictureBoxBaseComState.Image = global::TELEMETRIAOBSIDIAN.Properties.Resources.default_base;
+            this.pictureBoxBaseComState.ImageRotate = 0F;
+            this.pictureBoxBaseComState.Location = new System.Drawing.Point(30, 45);
+            this.pictureBoxBaseComState.Name = "pictureBoxBaseComState";
+            this.pictureBoxBaseComState.Size = new System.Drawing.Size(32, 32);
+            this.pictureBoxBaseComState.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBoxBaseComState.TabIndex = 1;
+            this.pictureBoxBaseComState.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Yu Gothic UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(2, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(191, 23);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "ESTADO DE CONEXIÓN";
             // 
             // btnComms
             // 
@@ -271,66 +309,24 @@ namespace TELEMETRIAOBSIDIAN
             this.btnSerial.UseVisualStyleBackColor = false;
             this.btnSerial.Click += new System.EventHandler(this.btnDatos_Click);
             // 
-            // guna2PictureBox2
+            // panelbase
             // 
-            this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox2.Image = global::TELEMETRIAOBSIDIAN.Properties.Resources.Group_109;
-            this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(165, 33);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox2.TabIndex = 1;
-            this.guna2PictureBox2.TabStop = false;
-            this.guna2PictureBox2.UseTransparentBackground = true;
+            this.panelbase.Controls.Add(this.pictureBoxFondoCohete);
+            this.panelbase.Location = new System.Drawing.Point(162, 36);
+            this.panelbase.Name = "panelbase";
+            this.panelbase.Size = new System.Drawing.Size(1500, 770);
+            this.panelbase.TabIndex = 11;
             // 
-            // minimizeBtn
+            // pictureBoxFondoCohete
             // 
-            this.minimizeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.minimizeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.minimizeBtn.Image = global::TELEMETRIAOBSIDIAN.Properties.Resources.new_minimize;
-            this.minimizeBtn.ImageRotate = 0F;
-            this.minimizeBtn.Location = new System.Drawing.Point(1220, 0);
-            this.minimizeBtn.Name = "minimizeBtn";
-            this.minimizeBtn.Size = new System.Drawing.Size(72, 36);
-            this.minimizeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.minimizeBtn.TabIndex = 3;
-            this.minimizeBtn.TabStop = false;
-            this.minimizeBtn.Click += new System.EventHandler(this.minimizeBtn_Click);
-            this.minimizeBtn.MouseEnter += new System.EventHandler(this.minimizeBtn_MouseEnter);
-            this.minimizeBtn.MouseLeave += new System.EventHandler(this.minimizeBtn_MouseLeave);
-            // 
-            // maximizeBtn
-            // 
-            this.maximizeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.maximizeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.maximizeBtn.Image = global::TELEMETRIAOBSIDIAN.Properties.Resources.minimize_window;
-            this.maximizeBtn.ImageRotate = 0F;
-            this.maximizeBtn.Location = new System.Drawing.Point(1289, 0);
-            this.maximizeBtn.Name = "maximizeBtn";
-            this.maximizeBtn.Size = new System.Drawing.Size(72, 36);
-            this.maximizeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.maximizeBtn.TabIndex = 2;
-            this.maximizeBtn.TabStop = false;
-            this.maximizeBtn.Click += new System.EventHandler(this.maximizeBtn_Click);
-            this.maximizeBtn.MouseEnter += new System.EventHandler(this.maximizeBtn_MouseEnter);
-            this.maximizeBtn.MouseLeave += new System.EventHandler(this.maximizeBtn_MouseLeave);
-            // 
-            // closeBtn
-            // 
-            this.closeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.closeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.closeBtn.Image = global::TELEMETRIAOBSIDIAN.Properties.Resources.new_close;
-            this.closeBtn.ImageRotate = 0F;
-            this.closeBtn.Location = new System.Drawing.Point(1360, 0);
-            this.closeBtn.Name = "closeBtn";
-            this.closeBtn.Size = new System.Drawing.Size(72, 36);
-            this.closeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.closeBtn.TabIndex = 1;
-            this.closeBtn.TabStop = false;
-            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
-            this.closeBtn.MouseEnter += new System.EventHandler(this.closeBtn_MouseEnter);
-            this.closeBtn.MouseLeave += new System.EventHandler(this.closeBtn_MouseLeave);
+            this.pictureBoxFondoCohete.Image = global::TELEMETRIAOBSIDIAN.Properties.Resources.rocket_planet_angle_1;
+            this.pictureBoxFondoCohete.ImageRotate = 0F;
+            this.pictureBoxFondoCohete.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxFondoCohete.Name = "pictureBoxFondoCohete";
+            this.pictureBoxFondoCohete.Size = new System.Drawing.Size(1400, 1000);
+            this.pictureBoxFondoCohete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxFondoCohete.TabIndex = 0;
+            this.pictureBoxFondoCohete.TabStop = false;
             // 
             // Form1
             // 
@@ -351,18 +347,17 @@ namespace TELEMETRIAOBSIDIAN
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.dragPanel.ResumeLayout(false);
-            this.guna2Panel2.ResumeLayout(false);
-            this.panelbase.ResumeLayout(false);
-            this.panelbase.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimizeBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximizeBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeBtn)).EndInit();
+            this.guna2Panel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRocketComState)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBaseComState)).EndInit();
+            this.panelbase.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFondoCohete)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -375,21 +370,20 @@ namespace TELEMETRIAOBSIDIAN
         private Guna.UI2.WinForms.Guna2PictureBox maximizeBtn;
         private Guna.UI2.WinForms.Guna2PictureBox minimizeBtn;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
-        private System.IO.Ports.SerialPort serialPort1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private System.Windows.Forms.Button btnResumen;
         private System.Windows.Forms.Button btnDatos;
         private System.Windows.Forms.Button btnSerial;
-        private System.Windows.Forms.Panel panelbase;
         private System.Windows.Forms.Button btnComms;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2PictureBox pictureBoxBaseComState;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
+        private Guna.UI2.WinForms.Guna2PictureBox pictureBoxRocketComState;
+        private System.Windows.Forms.Panel panelbase;
+        private Guna.UI2.WinForms.Guna2PictureBox pictureBoxFondoCohete;
     }
 }
 

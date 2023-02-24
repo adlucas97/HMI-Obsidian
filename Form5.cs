@@ -26,6 +26,7 @@ namespace TELEMETRIAOBSIDIAN
             comboBoxPort.Items.AddRange(portList);
             String[] baudRates = { "9600", "38400", "57600", "115200" };
             comboBoxBaud.DataSource = baudRates;
+            Console.WriteLine("Se inicio ventana de com");
         }
 
         private void buttonRefresh_Click(object sender, EventArgs e)
@@ -38,21 +39,22 @@ namespace TELEMETRIAOBSIDIAN
         {
             try
             {
-                if (serialPort1.IsOpen)
+                if (SerialCom.serialPort1.IsOpen)
                 {
-                    serialPort1.WriteLine("$Stop");
-                    serialPort1.Close();
+                    SerialCom.serialPort1.WriteLine("$Stop");
+                    SerialCom.serialPort1.Close();
                     comboBoxBaud.Enabled = true;
                     comboBoxPort.Enabled = true;
                     buttonRefresh.Enabled = true;
                     buttonOpen.Text = "Iniciar Comunicación";
-
+                    ComForms.ChangeRocketComState1(0);
+                    ComForms.ChangebaseComState1(0);
                 }
                 else
                 {
-                    serialPort1.PortName = comboBoxPort.Text;
-                    serialPort1.BaudRate = Convert.ToInt32(comboBoxBaud.Text);
-                    serialPort1.Open();
+                    SerialCom.serialPort1.PortName = comboBoxPort.Text;
+                    SerialCom.serialPort1.BaudRate = Convert.ToInt32(comboBoxBaud.Text);
+                    SerialCom.serialPort1.Open();
 
                     comboBoxBaud.Enabled = false;
                     comboBoxPort.Enabled = false;
@@ -60,7 +62,8 @@ namespace TELEMETRIAOBSIDIAN
 
                     buttonOpen.Text = "Detener Comunicación";
 
-                    serialPort1.WriteLine("$Start");
+                    SerialCom.serialPort1.WriteLine("$Start");
+                    ComForms.ChangebaseComState1(1);
                 }
 
 
@@ -70,5 +73,6 @@ namespace TELEMETRIAOBSIDIAN
                 MessageBox.Show(error.Message);
             }
         }
+
     }
 }

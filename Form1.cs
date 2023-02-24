@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Linq;
 
+using System.Threading;
+
 namespace TELEMETRIAOBSIDIAN
 {
     public partial class Form1 : Form
@@ -14,10 +16,10 @@ namespace TELEMETRIAOBSIDIAN
         #region Variables
         List<string> keys = new List<string> { "t", "T", "A", "P", "gx", "gy", "gz", "acx", "acy", "acz", "Pa", "V" };
         Dictionary<string, string> data = new Dictionary<string, string>();
-        double tiempo = 0;
+        //double tiempo = 0;
         #endregion
 
-        #region Config Formulario
+        #region Config Formulario 1
         //-----------------------------Conf del formulario ----------------------------------
         public Form1()
         {
@@ -29,11 +31,6 @@ namespace TELEMETRIAOBSIDIAN
         {
             try
             {
-                //string[] portList = SerialPort.GetPortNames();
-                //comboBoxPort.Items.AddRange(portList);
-                //String[] baudRates = { "9600", "38400", "57600", "115200" };
-                //comboBoxBaud.DataSource = baudRates;
-
                 if (this.WindowState == FormWindowState.Maximized)
                 {
                     maximizeBtn.Image = Properties.Resources.minimize_window;
@@ -43,6 +40,9 @@ namespace TELEMETRIAOBSIDIAN
                     maximizeBtn.Image = Properties.Resources.newer_maximize;
                 }
 
+                CheckForIllegalCrossThreadCalls = false;
+                ComForms.pictureBoxRocketComState = pictureBoxRocketComState;
+                ComForms.pictureBoxBaseComState = pictureBoxBaseComState;
             }
             catch (Exception error)
             {
@@ -52,11 +52,11 @@ namespace TELEMETRIAOBSIDIAN
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (serialPort1.IsOpen)
+            if (SerialCom.serialPort1.IsOpen)
             {
                 try
                 {
-                    serialPort1.Close();
+                    SerialCom.serialPort1.Close();
                 }
                 catch (Exception error)
                 {
@@ -70,10 +70,11 @@ namespace TELEMETRIAOBSIDIAN
         //------------------------ Conf Boton de cerrado -------------------------------
         private void closeBtn_Click(object sender, EventArgs e)
         {
-            if (serialPort1.IsOpen)
+            if (SerialCom.serialPort1.IsOpen)
             {
-                serialPort1.WriteLine("$Stop");
-                serialPort1.Close();
+                SerialCom.serialPort1.WriteLine("$Stop");
+                Thread.Sleep(10);
+                SerialCom.serialPort1.Close();
             }
 
 
@@ -149,10 +150,10 @@ namespace TELEMETRIAOBSIDIAN
         //{
         //    try
         //    {
-        //        if (serialPort1.IsOpen)
+        //        if (SerialCom.serialPort1.IsOpen)
         //        {
-        //            serialPort1.WriteLine("$Stop");
-        //            serialPort1.Close();
+        //            SerialCom.serialPort1.WriteLine("$Stop");
+        //            SerialCom.serialPort1.Close();
         //            comboBoxBaud.Enabled = true;
         //            comboBoxPort.Enabled = true;
         //            buttonRefresh.Enabled = true;
@@ -161,9 +162,9 @@ namespace TELEMETRIAOBSIDIAN
         //        }
         //        else
         //        {
-        //            serialPort1.PortName = comboBoxPort.Text;
-        //            serialPort1.BaudRate = Convert.ToInt32(comboBoxBaud.Text);
-        //            serialPort1.Open();
+        //            SerialCom.serialPort1.PortName = comboBoxPort.Text;
+        //            SerialCom.serialPort1.BaudRate = Convert.ToInt32(comboBoxBaud.Text);
+        //            SerialCom.serialPort1.Open();
 
         //            comboBoxBaud.Enabled = false;
         //            comboBoxPort.Enabled = false;
@@ -171,7 +172,7 @@ namespace TELEMETRIAOBSIDIAN
 
         //            buttonOpen.Text = "Detener Comunicación";
 
-        //            serialPort1.WriteLine("$Start");
+        //            SerialCom.serialPort1.WriteLine("$Start");
         //        }
 
 
@@ -192,135 +193,9 @@ namespace TELEMETRIAOBSIDIAN
         //}
         //#endregion
 
-        #region Comunicacion Serial y Lectura de datos
-        //--------------------------------Conf de lectura serial y acciones --------------------------       
-        //private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
-        //{
-        //    while (serialPort1.IsOpen && serialPort1.BytesToRead > 0)
-        //    {
-        //        try
-        //        {
-        //            string serialData = serialPort1.ReadLine();
-        //            string[] measures = serialData.Split(',');
-        //            List<string> receivedKeys = new List<string>();
-        //            Console.WriteLine(serialData);
-        //            foreach (string measure in measures)
-        //            {
-        //                // Verificar el formato correcto
-        //                string[] parts = measure.Split('=');
-        //                if (parts.Length != 2)
-        //                {
-        //                    Console.WriteLine("Error en el formato: " + measure);
+        
 
-        //                    return;
-        //                }
-
-        //                // Verificar que el identificador esté en la lista de identificadores predefinidos
-        //                string key = parts[0];
-        //                if (!keys.Contains(key))
-        //                {
-        //                    Console.WriteLine("Identificador desconocido: " + key);
-        //                    return;
-        //                }
-        //                else
-        //                {
-        //                    // Guardar el valor en el diccionario
-        //                    receivedKeys.Add(key);
-        //                    string pattern = @"\r\n|\r|\n";
-        //                    string value = parts[1];
-        //                    value = Regex.Replace(value, pattern, "");
-        //                    data[key] = value;
-        //                    Console.WriteLine("Key: " + key + " value: " + value);
-
-        //                }
-        //            }
-
-        //            CheckForIllegalCrossThreadCalls = false;
-        //            foreach (var key in receivedKeys)
-        //            {
-        //                switch (key)
-        //                {
-        //                    case "t":
-        //                        break;
-        //                    case "T":
-        //                        labelTemp.Text = data[key];
-        //                        chartTemp.Invoke((MethodInvoker)(() => chartTemp.Series["Temperatura"].Points.AddY(Convert.ToInt32(data[key]))));
-        //                        break;
-        //                    case "A":
-        //                        labelAlt.Text = data[key];
-        //                        chartAltitud.Invoke((MethodInvoker)(() => chartAltitud.Series["Altitud"].Points.AddY(Convert.ToInt32(data[key]))));
-        //                        break;
-        //                    case "P":
-        //                        string valor = data[key];
-        //                        if (valor == "1")
-        //                        {
-        //                            parachutePictureBox.Image = Properties.Resources._256px_open_parachute;
-        //                            parachuteStateLabel.Text = "DESPLEGADO";
-
-        //                        }
-        //                        Console.WriteLine("P: " + data[key]);
-        //                        break;
-        //                    case "ax":
-        //                        Console.WriteLine("ax: " + data[key]);
-        //                        break;
-        //                    case "ay":
-        //                        Console.WriteLine("ay: " + data[key]);
-        //                        break;
-        //                    case "az":
-        //                        Console.WriteLine("az: " + data[key]);
-        //                        break;
-        //                    case "acx":
-        //                        Console.WriteLine("acx: " + data[key]);
-        //                        break;
-        //                    case "acy":
-        //                        Console.WriteLine("acy: " + data[key]);
-        //                        break;
-        //                    case "acz":
-        //                        Console.WriteLine("acz: " + data[key]);
-        //                        break;
-        //                    case "Pa":
-        //                        break;
-        //                }
-        //            }
-        //            // Verificar si existe el archivo mediciones.txt
-        //            string fileName = "mediciones.txt";
-        //            if (!File.Exists(fileName))
-        //            {
-        //                // Crear el archivo si no existe
-        //                using (StreamWriter writer = File.CreateText(fileName))
-        //                {
-        //                    // Escribir los datos en el archivo
-        //                    foreach (KeyValuePair<string, string> entry in data)
-        //                    {
-        //                        writer.WriteLine(entry.Key + "=" + entry.Value);
-        //                    }
-        //                }
-        //            }
-        //            else
-        //            {
-        //                // Agregar los datos al archivo si ya existe
-        //                using (StreamWriter writer = File.AppendText(fileName))
-        //                {
-        //                    // Escribir los datos en el archivo
-        //                    foreach (KeyValuePair<string, string> entry in data)
-        //                    {
-        //                        writer.WriteLine(entry.Key + "=" + entry.Value);
-        //                    }
-        //                }
-        //            }
-        //        }
-        //        catch (Exception error)
-        //        {
-        //            Console.WriteLine(error.Message);
-        //        }
-
-
-        //    }
-        //}
-
-        #endregion
-
-        #region Funcionalidades Formulario
+        #region Control Formularios
         private void AbrirFormulario<MiForm>() where MiForm : Form, new()
         {
             Form formulario;
@@ -364,5 +239,7 @@ namespace TELEMETRIAOBSIDIAN
         {
             AbrirFormulario<Form5>();
         }
+
+
     }
 }
