@@ -24,6 +24,9 @@ namespace TELEMETRIAOBSIDIAN
         public Form1()
         {
             InitializeComponent();
+            Form4 form4 = new Form4();
+            form4.Show();
+            form4.Hide();
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
 
         }
@@ -193,9 +196,10 @@ namespace TELEMETRIAOBSIDIAN
         //}
         //#endregion
 
-        
+
 
         #region Control Formularios
+
         private void AbrirFormulario<MiForm>() where MiForm : Form, new()
         {
             Form formulario;
@@ -214,10 +218,9 @@ namespace TELEMETRIAOBSIDIAN
             else
             {
                 formulario.BringToFront();
+
             }
-
         }
-
         #endregion
 
         private void btnSerial_Click(object sender, EventArgs e)

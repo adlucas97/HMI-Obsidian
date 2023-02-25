@@ -179,13 +179,17 @@ namespace TELEMETRIAOBSIDIAN
                 if (!transButtonState)
                 {
                     SerialCom.serialPort1.WriteLine("$SendData");
-                    buttonStartTrans.Text = "Detener Transmision";
+                    buttonStartTrans.Text = "DETENER TRANSMISIÓN";
+                    buttonStartTrans.BackColor = Color.FromArgb(255, 71, 15, 149);
+                    buttonStartTrans.ForeColor = Color.FromArgb(255, 255, 255, 255);
                     transButtonState = true;
                 }
                 else
                 {
                     SerialCom.serialPort1.WriteLine("$StopData");
-                    buttonStartTrans.Text = "iniciar Transmisión";
+                    buttonStartTrans.Text = "INICIAR TRANSMISIÓN";
+                    buttonStartTrans.BackColor = Color.FromArgb(255, 71, 15, 149);
+                    buttonStartTrans.ForeColor = Color.FromArgb(255, 255, 255, 255);
                     transButtonState = false;
                 }
                 
@@ -196,6 +200,10 @@ namespace TELEMETRIAOBSIDIAN
         private void Form2_Load(object sender, EventArgs e)
         {
             buttonStartTrans.Enabled = ComForms.comRocketState1;
+            if (!buttonStartTrans.Enabled)
+            {
+                buttonStartTrans.BackColor = Color.FromArgb(255, 110, 106, 170);
+            }
             ComForms.startTransButton = buttonStartTrans;
             ComForms.accelerationChart = chartAcceleration;
             ComForms.altitudChart = chartAltitud;

@@ -23,5 +23,7 @@ namespace TELEMETRIAOBSIDIAN
         {
             ComForms.richTextBox1 = richTextBox1;
         }
+
+
     }
 }

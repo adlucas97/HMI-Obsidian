@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.Drawing;
 namespace TELEMETRIAOBSIDIAN
 {
     public class ComForms
@@ -127,8 +128,14 @@ namespace TELEMETRIAOBSIDIAN
                 case 0: // Desconectado
                     pictureBoxRocketComState.Image = Properties.Resources.default_rocket;
                     comRocketState1 = false;
-                    if(startTransButton!=null)
+                    if (startTransButton != null)
+                    {
                         startTransButton.Enabled = comRocketState1;
+                        if (!startTransButton.Enabled)
+                        {
+                            startTransButton.BackColor = Color.FromArgb(255, 71, 15, 149);
+                        }
+                    }
                     break;
                 case 1: // Conectado $GoodCom o si hay transmision
                     pictureBoxRocketComState.Image = Properties.Resources.success_rocket;

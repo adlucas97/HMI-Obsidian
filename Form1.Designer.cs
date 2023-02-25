@@ -312,18 +312,20 @@ namespace TELEMETRIAOBSIDIAN
             // panelbase
             // 
             this.panelbase.Controls.Add(this.pictureBoxFondoCohete);
-            this.panelbase.Location = new System.Drawing.Point(162, 36);
+            this.panelbase.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelbase.Location = new System.Drawing.Point(165, 36);
             this.panelbase.Name = "panelbase";
-            this.panelbase.Size = new System.Drawing.Size(1500, 770);
+            this.panelbase.Size = new System.Drawing.Size(1267, 764);
             this.panelbase.TabIndex = 11;
             // 
             // pictureBoxFondoCohete
             // 
+            this.pictureBoxFondoCohete.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBoxFondoCohete.Image = global::TELEMETRIAOBSIDIAN.Properties.Resources.rocket_planet_angle_1;
             this.pictureBoxFondoCohete.ImageRotate = 0F;
             this.pictureBoxFondoCohete.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxFondoCohete.Name = "pictureBoxFondoCohete";
-            this.pictureBoxFondoCohete.Size = new System.Drawing.Size(1400, 1000);
+            this.pictureBoxFondoCohete.Size = new System.Drawing.Size(1267, 764);
             this.pictureBoxFondoCohete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxFondoCohete.TabIndex = 0;
             this.pictureBoxFondoCohete.TabStop = false;

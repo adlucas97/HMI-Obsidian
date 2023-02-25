@@ -84,7 +84,7 @@ namespace TELEMETRIAOBSIDIAN
             this.labelBaud.BackColor = System.Drawing.Color.Transparent;
             this.labelBaud.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelBaud.ForeColor = System.Drawing.Color.Black;
-            this.labelBaud.Location = new System.Drawing.Point(303, 37);
+            this.labelBaud.Location = new System.Drawing.Point(291, 37);
             this.labelBaud.Name = "labelBaud";
             this.labelBaud.Size = new System.Drawing.Size(88, 20);
             this.labelBaud.TabIndex = 18;
@@ -102,7 +102,7 @@ namespace TELEMETRIAOBSIDIAN
             "38400",
             "57600",
             "115200"});
-            this.comboBoxBaud.Location = new System.Drawing.Point(397, 37);
+            this.comboBoxBaud.Location = new System.Drawing.Point(385, 37);
             this.comboBoxBaud.Name = "comboBoxBaud";
             this.comboBoxBaud.Size = new System.Drawing.Size(121, 24);
             this.comboBoxBaud.TabIndex = 17;
@@ -121,7 +121,7 @@ namespace TELEMETRIAOBSIDIAN
             this.buttonRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRefresh.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRefresh.ForeColor = System.Drawing.Color.White;
-            this.buttonRefresh.Location = new System.Drawing.Point(560, 31);
+            this.buttonRefresh.Location = new System.Drawing.Point(544, 31);
             this.buttonRefresh.Name = "buttonRefresh";
             this.buttonRefresh.Size = new System.Drawing.Size(121, 32);
             this.buttonRefresh.TabIndex = 19;
@@ -148,9 +148,9 @@ namespace TELEMETRIAOBSIDIAN
             this.buttonOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonOpen.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonOpen.ForeColor = System.Drawing.Color.White;
-            this.buttonOpen.Location = new System.Drawing.Point(687, 31);
+            this.buttonOpen.Location = new System.Drawing.Point(671, 31);
             this.buttonOpen.Name = "buttonOpen";
-            this.buttonOpen.Size = new System.Drawing.Size(211, 32);
+            this.buttonOpen.Size = new System.Drawing.Size(227, 32);
             this.buttonOpen.TabIndex = 20;
             this.buttonOpen.Text = "INICIAR COMUNICACIÓN";
             this.buttonOpen.UseVisualStyleBackColor = false;
@@ -204,7 +204,7 @@ namespace TELEMETRIAOBSIDIAN
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(303, 37);
+            this.label4.Location = new System.Drawing.Point(291, 37);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(88, 20);
             this.label4.TabIndex = 18;
@@ -216,9 +216,9 @@ namespace TELEMETRIAOBSIDIAN
             this.buttonOpen2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonOpen2.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonOpen2.ForeColor = System.Drawing.Color.White;
-            this.buttonOpen2.Location = new System.Drawing.Point(687, 31);
+            this.buttonOpen2.Location = new System.Drawing.Point(671, 31);
             this.buttonOpen2.Name = "buttonOpen2";
-            this.buttonOpen2.Size = new System.Drawing.Size(211, 32);
+            this.buttonOpen2.Size = new System.Drawing.Size(227, 32);
             this.buttonOpen2.TabIndex = 20;
             this.buttonOpen2.Text = "INICIAR COMUNICACIÓN";
             this.buttonOpen2.UseVisualStyleBackColor = false;
@@ -237,7 +237,7 @@ namespace TELEMETRIAOBSIDIAN
             this.buttonRefresh2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRefresh2.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRefresh2.ForeColor = System.Drawing.Color.White;
-            this.buttonRefresh2.Location = new System.Drawing.Point(560, 31);
+            this.buttonRefresh2.Location = new System.Drawing.Point(544, 31);
             this.buttonRefresh2.Name = "buttonRefresh2";
             this.buttonRefresh2.Size = new System.Drawing.Size(121, 32);
             this.buttonRefresh2.TabIndex = 19;
@@ -256,7 +256,7 @@ namespace TELEMETRIAOBSIDIAN
             "38400",
             "57600",
             "115200"});
-            this.comboBoxBaud2.Location = new System.Drawing.Point(397, 37);
+            this.comboBoxBaud2.Location = new System.Drawing.Point(385, 37);
             this.comboBoxBaud2.Name = "comboBoxBaud2";
             this.comboBoxBaud2.Size = new System.Drawing.Size(121, 24);
             this.comboBoxBaud2.TabIndex = 17;

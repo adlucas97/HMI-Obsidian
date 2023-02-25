@@ -566,13 +566,13 @@ namespace TELEMETRIAOBSIDIAN
             // 
             // buttonStartTrans
             // 
-            this.buttonStartTrans.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(15)))), ((int)(((byte)(149)))));
+            this.buttonStartTrans.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(106)))), ((int)(((byte)(170)))));
             this.buttonStartTrans.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonStartTrans.Font = new System.Drawing.Font("Yu Gothic UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonStartTrans.ForeColor = System.Drawing.Color.White;
-            this.buttonStartTrans.Location = new System.Drawing.Point(776, 85);
+            this.buttonStartTrans.Location = new System.Drawing.Point(760, 85);
             this.buttonStartTrans.Name = "buttonStartTrans";
-            this.buttonStartTrans.Size = new System.Drawing.Size(340, 51);
+            this.buttonStartTrans.Size = new System.Drawing.Size(381, 51);
             this.buttonStartTrans.TabIndex = 20;
             this.buttonStartTrans.Text = "INICIAR TRANSMISIÓN";
             this.buttonStartTrans.UseVisualStyleBackColor = false;

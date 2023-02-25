@@ -46,7 +46,10 @@ namespace TELEMETRIAOBSIDIAN
                     comboBoxBaud.Enabled = true;
                     comboBoxPort.Enabled = true;
                     buttonRefresh.Enabled = true;
-                    buttonOpen.Text = "Iniciar Comunicación";
+                    buttonOpen.Text = "INICIAR COMUNICACIÓN";
+                    buttonRefresh.BackColor = Color.FromArgb(255, 71, 15, 149);
+                    buttonOpen.ForeColor = Color.FromArgb(255, 255, 255, 255);
+                    buttonRefresh.ForeColor = Color.FromArgb(255, 255, 255, 255);
                     ComForms.ChangeRocketComState1(0);
                     ComForms.ChangebaseComState1(0);
                 }
@@ -59,8 +62,9 @@ namespace TELEMETRIAOBSIDIAN
                     comboBoxBaud.Enabled = false;
                     comboBoxPort.Enabled = false;
                     buttonRefresh.Enabled = false;
-
-                    buttonOpen.Text = "Detener Comunicación";
+                    buttonRefresh.BackColor = Color.FromArgb(255, 110, 106, 170);
+                    buttonRefresh.ForeColor = Color.FromArgb(255, 255, 255, 255);
+                    buttonOpen.Text = "DETENER COMUNICACIÓN";
 
                     SerialCom.serialPort1.WriteLine("$Start");
                     ComForms.ChangebaseComState1(1);
