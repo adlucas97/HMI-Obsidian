@@ -16,7 +16,7 @@ namespace TELEMETRIAOBSIDIAN
     static public class SerialCom
     {
         public static SerialPort serialPort1 { get; set; } = new SerialPort();
-        private static System.Timers.Timer aTimer;
+        //private static System.Timers.Timer aTimer;
         static SerialCom()
         {
             InitializeSerialPort();
@@ -40,7 +40,7 @@ namespace TELEMETRIAOBSIDIAN
                     string pattern = @"\r\n|\r|\n";
                     string serialData = serialPort1.ReadLine();
                     serialData = Regex.Replace(serialData, pattern, "");
-                    //Console.WriteLine(serialData);
+                    ComForms.WriteToConsole(serialData);
 
                     if (serialData.StartsWith("$Data:"))
                     {

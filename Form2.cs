@@ -27,149 +27,7 @@ namespace TELEMETRIAOBSIDIAN
             InitializeComponent();
         }
 
-       // #region Comunicacion Serial y Lectura de datos
-       //// --------------------------------Conf de lectura serial y acciones --------------------------       
-       // private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
-       // {
-       //     while (SerialCom.serialPort1.IsOpen && SerialCom.serialPort1.BytesToRead > 0)
-       //     {
-       //         try
-       //         {
-       //             string pattern = @"\r\n|\r|\n";
-       //             string serialData = SerialCom.serialPort1.ReadLine();
-       //             serialData = Regex.Replace(serialData, pattern, "");
-       //             Console.WriteLine(serialData);
-       //             if (serialData.StartsWith("$Data:"))
-       //             {
-       //                 string[] measures = serialData.Substring(6).Split(',');
-       //                 List<string> receivedKeys = new List<string>();
-       //                 Console.WriteLine(serialData);
-       //                 foreach (string measure in measures)
-       //                 {
-       //                     //Verificar el formato correcto
-       //                     string[] parts = measure.Split('=');
-       //                     if (parts.Length != 2)
-       //                     {
-       //                         Console.WriteLine("Error en el formato: " + measure);
 
-       //                     }
-
-       //                     //Verificar que el identificador esté en la lista de identificadores predefinidos
-       //                     string key = parts[0];
-       //                     if (!keys.Contains(key))
-       //                     {
-       //                         Console.WriteLine("Identificador desconocido: " + key);
-       //                     }
-       //                     else
-       //                     {
-       //                         //Guardar el valor en el diccionario
-       //                         receivedKeys.Add(key);
-       //                         string value = parts[1];
-       //                         value = Regex.Replace(value, pattern, "");
-       //                         data[key] = value;
-       //                         Console.WriteLine("Key: " + key + " value: " + value);
-
-       //                     }
-       //                 }
-
-       //                 CheckForIllegalCrossThreadCalls = false;
-       //                 foreach (var key in receivedKeys)
-       //                 {
-       //                     switch (key)
-       //                     {
-       //                         case "t":
-       //                             break;
-       //                         case "T":
-       //                             labelTemp.Text = data[key];
-       //                             chartTemp.Invoke((MethodInvoker)(() => chartTemp.Series["Temperatura"].Points.AddY(Convert.ToInt32(data[key]))));
-       //                             break;
-       //                         case "A":
-       //                             labelAlt.Text = data[key];
-       //                             chartAltitud.Invoke((MethodInvoker)(() => chartAltitud.Series["Altitud"].Points.AddY(Convert.ToInt32(data[key]))));
-       //                             break;
-       //                         case "P":
-       //                             string valor = data[key];
-       //                             if (valor == "1")
-       //                             {
-       //                                 parachutePictureBox.Image = Properties.Resources.parachute;
-       //                                 parachuteStateLabel.Text = "Desplegado";
-
-       //                             }
-       //                             Console.WriteLine("P: " + data[key]);
-       //                             break;
-       //                         case "gx":
-       //                             Console.WriteLine("gx: " + data[key]);
-       //                             break;
-       //                         case "gy":
-       //                             Console.WriteLine("gy: " + data[key]);
-       //                             break;
-       //                         case "gz":
-       //                             Console.WriteLine("gz: " + data[key]);
-       //                             break;
-       //                         case "acx":
-
-       //                             Console.WriteLine("acx: " + data[key]);
-       //                             break;
-       //                         case "acy":
-       //                             Console.WriteLine("acy: " + data[key]);
-       //                             break;
-       //                         case "acz":
-       //                             labelAcceleration.Text = data[key];
-       //                             chartAcceleration.Invoke((MethodInvoker)(() => chartAcceleration.Series["Aceleracion"].Points.AddY(Convert.ToInt32(data[key]))));
-       //                             Console.WriteLine("acz: " + data[key]);
-       //                             break;
-       //                         case "Pa":
-       //                             break;
-       //                     }
-       //                 }
-       //                 //Verificar si existe el archivo mediciones.txt
-       //                 //string filePath = @"D:\OneDrive\Documentos\PAEGUA\GUI\GUI Telemetria PAEGUA\Share HMI\HMI-Obsidian\mediciones.txt";
-       //                 string fileName = "mediciones.txt";
-       //                 if (!File.Exists(fileName))
-       //                 {
-       //                     //Crear el archivo si no existe
-       //                     using (StreamWriter writer = File.CreateText(fileName))
-       //                     {
-       //                         //Escribir los datos en el archivo
-       //                         foreach (KeyValuePair<string, string> entry in data)
-       //                         {
-       //                             writer.WriteLine(entry.Key + "=" + entry.Value);
-       //                         }
-       //                     }
-       //                 }
-       //                 else
-       //                 {
-       //                     //Agregar los datos al archivo si ya existe
-       //                     using (StreamWriter writer = File.AppendText(fileName))
-       //                     {
-       //                         //Escribir los datos en el archivo
-       //                         foreach (KeyValuePair<string, string> entry in data)
-       //                         {
-       //                             writer.WriteLine(entry.Key + "=" + entry.Value);
-       //                         }
-       //                     }
-       //                 }
-       //             }
-
-       //             else if (serialData == "$ErrorCom")
-       //             {
-       //                 Console.WriteLine("Error en comunicación con cohete");
-       //             }
-       //             else if (serialData == "$GoodCom")
-       //             {
-
-       //             }
-       //         }
-       //         catch (Exception error)
-       //         {
-       //             Console.WriteLine(error.Message);
-       //         }
-
-
-       //     }
-       // }
-
-       // #endregion
 
         private void buttonIniciar_Click(object sender, EventArgs e)
         {
@@ -200,9 +58,14 @@ namespace TELEMETRIAOBSIDIAN
         private void Form2_Load(object sender, EventArgs e)
         {
             buttonStartTrans.Enabled = ComForms.comRocketState1;
-            if (!buttonStartTrans.Enabled)
+            if (buttonStartTrans.Enabled)
+            {
+                buttonStartTrans.BackColor = Color.FromArgb(255, 71, 15, 149);
+            }
+            else
             {
                 buttonStartTrans.BackColor = Color.FromArgb(255, 110, 106, 170);
+                buttonStartTrans.ForeColor = Color.FromArgb(255, 255, 255, 255);
             }
             ComForms.startTransButton = buttonStartTrans;
             ComForms.accelerationChart = chartAcceleration;
@@ -219,5 +82,17 @@ namespace TELEMETRIAOBSIDIAN
             ComForms.parachutePictureBox = parachutePictureBox;
         }
 
+        private void buttonStartTrans_EnabledChanged(object sender, EventArgs e)
+        {
+            if (buttonStartTrans.Enabled)
+            {
+                buttonStartTrans.BackColor = Color.FromArgb(255, 71, 15, 149);
+            }
+            else
+            {
+                buttonStartTrans.BackColor = Color.FromArgb(255, 110, 106, 170);
+                buttonStartTrans.ForeColor = Color.FromArgb(255, 255,255,255);
+            }
+        }
     }
 }

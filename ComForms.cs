@@ -88,7 +88,7 @@ namespace TELEMETRIAOBSIDIAN
                         if (valor == "1")
                         {
                             parachutePictureBox.Image = Properties.Resources._256px_rocket_parachute;
-                            parachuteStateLabel.Text = "Desplegado";
+                            parachuteStateLabel.Text = "DESPLEGADO";
 
                         }
                         Console.WriteLine("P: " + data[key]);
@@ -131,23 +131,28 @@ namespace TELEMETRIAOBSIDIAN
                     if (startTransButton != null)
                     {
                         startTransButton.Enabled = comRocketState1;
-                        if (!startTransButton.Enabled)
-                        {
-                            startTransButton.BackColor = Color.FromArgb(255, 71, 15, 149);
-                        }
+                        
                     }
                     break;
                 case 1: // Conectado $GoodCom o si hay transmision
                     pictureBoxRocketComState.Image = Properties.Resources.success_rocket;
                     comRocketState1 = true;
                     if (startTransButton != null)
+                    {
                         startTransButton.Enabled = comRocketState1;
+                        
+                    }
+                        
                     break;
                 case 2: // Error
                     pictureBoxRocketComState.Image = Properties.Resources.fail_rocket;
                     comRocketState1 = false;
                     if (startTransButton != null)
+                    {
                         startTransButton.Enabled = comRocketState1;
+                       
+                    }
+                        
                     break;
             }
         }

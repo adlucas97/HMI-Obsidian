@@ -46,7 +46,7 @@ namespace TELEMETRIAOBSIDIAN
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.guna2GroupBox4 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.guna2CircleProgressBar1 = new Guna.UI2.WinForms.Guna2CircleProgressBar();
+            this.CircleProgressBar1 = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
@@ -72,7 +72,7 @@ namespace TELEMETRIAOBSIDIAN
             this.buttonStartTrans = new System.Windows.Forms.Button();
             this.guna2Panel3.SuspendLayout();
             this.guna2GroupBox4.SuspendLayout();
-            this.guna2CircleProgressBar1.SuspendLayout();
+            this.CircleProgressBar1.SuspendLayout();
             this.guna2GroupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartVelocity)).BeginInit();
             this.guna2GroupBox2.SuspendLayout();
@@ -112,7 +112,7 @@ namespace TELEMETRIAOBSIDIAN
             this.guna2GroupBox4.AutoRoundedCorners = true;
             this.guna2GroupBox4.BackColor = System.Drawing.Color.Transparent;
             this.guna2GroupBox4.BorderRadius = 166;
-            this.guna2GroupBox4.Controls.Add(this.guna2CircleProgressBar1);
+            this.guna2GroupBox4.Controls.Add(this.CircleProgressBar1);
             this.guna2GroupBox4.CustomBorderThickness = new System.Windows.Forms.Padding(0);
             this.guna2GroupBox4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(15)))), ((int)(((byte)(149)))));
             this.guna2GroupBox4.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -127,27 +127,27 @@ namespace TELEMETRIAOBSIDIAN
             this.guna2GroupBox4.TabIndex = 18;
             this.guna2GroupBox4.Text = "Presión Atmosférica";
             // 
-            // guna2CircleProgressBar1
+            // CircleProgressBar1
             // 
-            this.guna2CircleProgressBar1.Controls.Add(this.label10);
-            this.guna2CircleProgressBar1.Controls.Add(this.label9);
-            this.guna2CircleProgressBar1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
-            this.guna2CircleProgressBar1.Font = new System.Drawing.Font("Yu Gothic UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2CircleProgressBar1.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleProgressBar1.Location = new System.Drawing.Point(17, 17);
-            this.guna2CircleProgressBar1.Maximum = 1024;
-            this.guna2CircleProgressBar1.Minimum = 0;
-            this.guna2CircleProgressBar1.Name = "guna2CircleProgressBar1";
-            this.guna2CircleProgressBar1.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(106)))), ((int)(((byte)(170)))));
-            this.guna2CircleProgressBar1.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(106)))), ((int)(((byte)(170)))));
-            this.guna2CircleProgressBar1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.guna2CircleProgressBar1.ShadowDecoration.Color = System.Drawing.Color.White;
-            this.guna2CircleProgressBar1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleProgressBar1.ShowText = true;
-            this.guna2CircleProgressBar1.Size = new System.Drawing.Size(300, 300);
-            this.guna2CircleProgressBar1.TabIndex = 0;
-            this.guna2CircleProgressBar1.TextMode = Guna.UI2.WinForms.Enums.ProgressBarTextMode.Value;
-            this.guna2CircleProgressBar1.Value = 45;
+            this.CircleProgressBar1.Controls.Add(this.label10);
+            this.CircleProgressBar1.Controls.Add(this.label9);
+            this.CircleProgressBar1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
+            this.CircleProgressBar1.Font = new System.Drawing.Font("Yu Gothic UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CircleProgressBar1.ForeColor = System.Drawing.Color.White;
+            this.CircleProgressBar1.Location = new System.Drawing.Point(17, 17);
+            this.CircleProgressBar1.Maximum = 1024;
+            this.CircleProgressBar1.Minimum = 0;
+            this.CircleProgressBar1.Name = "CircleProgressBar1";
+            this.CircleProgressBar1.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(106)))), ((int)(((byte)(170)))));
+            this.CircleProgressBar1.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(106)))), ((int)(((byte)(170)))));
+            this.CircleProgressBar1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.CircleProgressBar1.ShadowDecoration.Color = System.Drawing.Color.White;
+            this.CircleProgressBar1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.CircleProgressBar1.ShowText = true;
+            this.CircleProgressBar1.Size = new System.Drawing.Size(300, 300);
+            this.CircleProgressBar1.TabIndex = 0;
+            this.CircleProgressBar1.TextMode = Guna.UI2.WinForms.Enums.ProgressBarTextMode.Value;
+            this.CircleProgressBar1.Value = 45;
             // 
             // label10
             // 
@@ -576,6 +576,7 @@ namespace TELEMETRIAOBSIDIAN
             this.buttonStartTrans.TabIndex = 20;
             this.buttonStartTrans.Text = "INICIAR TRANSMISIÓN";
             this.buttonStartTrans.UseVisualStyleBackColor = false;
+            this.buttonStartTrans.EnabledChanged += new System.EventHandler(this.buttonStartTrans_EnabledChanged);
             this.buttonStartTrans.Click += new System.EventHandler(this.buttonIniciar_Click);
             // 
             // Form2
@@ -598,8 +599,8 @@ namespace TELEMETRIAOBSIDIAN
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
             this.guna2GroupBox4.ResumeLayout(false);
-            this.guna2CircleProgressBar1.ResumeLayout(false);
-            this.guna2CircleProgressBar1.PerformLayout();
+            this.CircleProgressBar1.ResumeLayout(false);
+            this.CircleProgressBar1.PerformLayout();
             this.guna2GroupBox3.ResumeLayout(false);
             this.guna2GroupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartVelocity)).EndInit();
@@ -624,7 +625,7 @@ namespace TELEMETRIAOBSIDIAN
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private System.Windows.Forms.Label label11;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox4;
-        private Guna.UI2.WinForms.Guna2CircleProgressBar guna2CircleProgressBar1;
+        private Guna.UI2.WinForms.Guna2CircleProgressBar CircleProgressBar1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox3;
