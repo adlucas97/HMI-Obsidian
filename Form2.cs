@@ -60,18 +60,18 @@ namespace TELEMETRIAOBSIDIAN
             buttonStartTrans.Enabled = ComForms.comRocketState1;
             if (buttonStartTrans.Enabled)
             {
-                buttonStartTrans.BackColor = Color.FromArgb(255, 71, 15, 149);
+                buttonStartTrans.BackColor = Color.FromArgb(255, 138, 150, 150);
             }
             else
             {
-                buttonStartTrans.BackColor = Color.FromArgb(255, 110, 106, 170);
+                buttonStartTrans.BackColor = Color.FromArgb(255, 138, 150, 150);
                 buttonStartTrans.ForeColor = Color.FromArgb(255, 255, 255, 255);
             }
             ComForms.startTransButton = buttonStartTrans;
             ComForms.accelerationChart = chartAcceleration;
             ComForms.altitudChart = chartAltitud;
             ComForms.temperatureChart = chartTemp;
-            ComForms.velocityChart = chartVelocity;
+            //ComForms.velocityChart = chartVelocity;
 
             ComForms.labelAcceleration = labelAcceleration;
             ComForms.labelAlt = labelAlt;
@@ -86,13 +86,28 @@ namespace TELEMETRIAOBSIDIAN
         {
             if (buttonStartTrans.Enabled)
             {
-                buttonStartTrans.BackColor = Color.FromArgb(255, 71, 15, 149);
+                buttonStartTrans.BackColor = Color.FromArgb(255, 138, 150, 150);
             }
             else
             {
-                buttonStartTrans.BackColor = Color.FromArgb(255, 110, 106, 170);
+                buttonStartTrans.BackColor = Color.FromArgb(255, 138, 150, 150);
                 buttonStartTrans.ForeColor = Color.FromArgb(255, 255,255,255);
             }
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

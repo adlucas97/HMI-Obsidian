@@ -58,7 +58,7 @@ namespace TELEMETRIAOBSIDIAN
             // 
             // guna2Panel3
             // 
-            this.guna2Panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(15)))), ((int)(((byte)(149)))));
+            this.guna2Panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(8)))), ((int)(((byte)(41)))));
             this.guna2Panel3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(15)))), ((int)(((byte)(149)))));
             this.guna2Panel3.Controls.Add(this.label11);
             this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -117,7 +117,7 @@ namespace TELEMETRIAOBSIDIAN
             // 
             // buttonRefresh
             // 
-            this.buttonRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(15)))), ((int)(((byte)(149)))));
+            this.buttonRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(95)))), ((int)(((byte)(135)))));
             this.buttonRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRefresh.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRefresh.ForeColor = System.Drawing.Color.White;
@@ -144,7 +144,7 @@ namespace TELEMETRIAOBSIDIAN
             // 
             // buttonOpen
             // 
-            this.buttonOpen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(15)))), ((int)(((byte)(149)))));
+            this.buttonOpen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(95)))), ((int)(((byte)(135)))));
             this.buttonOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonOpen.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonOpen.ForeColor = System.Drawing.Color.White;
@@ -212,7 +212,7 @@ namespace TELEMETRIAOBSIDIAN
             // 
             // buttonOpen2
             // 
-            this.buttonOpen2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(15)))), ((int)(((byte)(149)))));
+            this.buttonOpen2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(95)))), ((int)(((byte)(135)))));
             this.buttonOpen2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonOpen2.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonOpen2.ForeColor = System.Drawing.Color.White;
@@ -233,7 +233,7 @@ namespace TELEMETRIAOBSIDIAN
             // 
             // buttonRefresh2
             // 
-            this.buttonRefresh2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(15)))), ((int)(((byte)(149)))));
+            this.buttonRefresh2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(95)))), ((int)(((byte)(135)))));
             this.buttonRefresh2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRefresh2.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRefresh2.ForeColor = System.Drawing.Color.White;
@@ -303,6 +303,7 @@ namespace TELEMETRIAOBSIDIAN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::TELEMETRIAOBSIDIAN.Properties.Resources.pattern_5op_350px;
             this.ClientSize = new System.Drawing.Size(1482, 673);
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2CustomGradientPanel1);

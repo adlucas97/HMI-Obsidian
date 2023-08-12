@@ -222,6 +222,10 @@ namespace TELEMETRIAOBSIDIAN
             }
         }
         #endregion
+        private void btnPaegua_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Form6>();
+        }
 
         private void btnSerial_Click(object sender, EventArgs e)
         {
